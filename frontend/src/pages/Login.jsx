@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 //import SummerApi from '../common';
 import {  toast } from 'react-toastify';
 import { useNavigate } from "react-router-dom";
+import SummerApi from '../common';
 //import Context from '../context';
 
 const Login = () => {
@@ -34,33 +35,35 @@ const Login = () => {
 
   const hendelSubmit=async(e) =>{
    e.preventDefault()
-//    try{
-//    const dataResponse=await fetch(SummerApi.signIn.url,{
-//     credentials:'include',
-//     method:SummerApi.signIn.method,
-//     headers:{
-//       "content-type":"application/json"
-//     },
-//     body:JSON.stringify(data)
-//    })
-//    console.log(SummerApi.signIn.url)
+   try{
+   const dataResponse=await fetch(SummerApi.signIn.url,{
+    credentials:'include',
+    method:SummerApi.signIn.method,
+    headers:{
+      "content-type":"application/json"
+    },
+    body:JSON.stringify(data)
+   })
+   console.log(SummerApi.signIn.url)
+    console.log(dataResponse)
 
-//    const dataApi=await dataResponse.json()
-//    if (dataApi.success) {
-//     toast.success(dataApi.message);
-//     console.log(dataApi.message);
-//     navigate('/')
-//     fetchUserDetails()
-//     featchUserAddtoCart()
+   const dataApi=await dataResponse.json()
+   if (dataApi.success) {
+    toast.success(dataApi.message);
+    console.log(dataApi.message);
+    console.log(dataApi)
+    navigate('/')
+    // fetchUserDetails()
+    // featchUserAddtoCart()
    
-//   } else if (dataApi.error) {
-//     toast.error(dataApi.message);
-//     console.log(dataApi.error);
-//   }
-//   }catch(error){
-//     console.error('Error:', error);
-//       toast.error('An error occurred. Please try again.');
-//   }
+  } else if (dataApi.error) {
+    toast.error(dataApi.message);
+    console.log(dataApi.error);
+  }
+  }catch(error){
+    console.error('Error:', error);
+      toast.error('An error occurred. Please try again.');
+  }
    
   }
   return (
