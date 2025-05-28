@@ -15,7 +15,7 @@ function App() {
  
   return (
     <>
-          <div style={{
+          {/* <div style={{
         position: 'fixed',
         top: 0,
         left: 0,
@@ -23,10 +23,10 @@ function App() {
         zIndex: 1000
       }}>
         <Header />
-      </div>
+      </div> */}
 
       {/* Scrollable Header1, add margin-top to offset fixed header height */}
-      <div style={{ marginTop: '60px' /* adjust to Header height */ }}>
+      <div style={{ marginTop: '0px' /* adjust to Header height */ }}>
         <Header1/>
       </div>
          

@@ -36,13 +36,19 @@ async function userSignInController(req, res) {
                 secure: true
             }
 
-            res.cookie("token", token, tokenoption).json({
+            // res.cookie("token", token, tokenoption).json({
+            //     message: "login successfull",
+            //     data: token,
+            //     success: true,
+            //     error: false
+
+            // })
+            res.status(200).json({
                 message: "login successfull",
                 data: token,
                 success: true,
                 error: false
-
-            })
+            });
 
         } else {
             throw new Error("password is incorrect cheak the password")

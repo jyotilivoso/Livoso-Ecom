@@ -7,8 +7,10 @@ import { FaShoppingCart, } from "react-icons/fa";
 import { Link, useLocation } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import Logo from './Logo';
+import { getUserData } from '../service/data';
 function Header() {
   
+  console.log(getUserData())
 
     
     return (
