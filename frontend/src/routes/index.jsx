@@ -3,6 +3,10 @@ import App from '../App'
 import Home from '../pages/Home'
 import Login from "../pages/Login";
 import SignUp from "../pages/SignUp";
+import Service from "../pages/Service";
+import Hero from "../pages/Hero";
+import StatsCard from "../pages/StatsCard";
+import Amitav from "../pages/Amitav";
 
 
 
@@ -24,9 +28,23 @@ const router = createBrowserRouter([
                 path: "sign-up",
                 element: <SignUp />
             },
+            {
+                path: "Amu",
+                element: <Amitav />
+            },
+            // {
+            //     path: "service",
+            //     element: <Service/>
+            // },
+            // {
+            //     path: "Hero",
+            //     element: <Hero/>
+            // },
+            // {
+            //     path: "hh",
+            //     element: < StatsCard />
+            // },
            
-
-
 
         ]
     }

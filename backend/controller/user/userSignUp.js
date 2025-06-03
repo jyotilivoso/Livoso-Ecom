@@ -22,6 +22,7 @@ async function userSignUpController(req, res) {
         }
         
         const existingUser = await UserModel.findOne({ email });
+        console.log("existingUser", existingUser)
         if (existingUser) {
             return res.status(400).json({
                 message: "User already exists with this email.",
@@ -35,6 +36,7 @@ async function userSignUpController(req, res) {
             role:"GENERAL",
             password: hashPassword
         }
+        
         const userData = new UserModel(payload)
         const saveData = await userData.save()
 
@@ -42,10 +44,11 @@ async function userSignUpController(req, res) {
             data: saveData,
             success: true,
             error: false,
-            message: "user create successfull"
+            message: "user create successfulll"
         })
     }
     catch (err) {
+        console.log("error in user signup controller", err)
         res.json({
             message: err.message || err,
             error: true,

@@ -248,7 +248,7 @@ function SignUp() {
                     className="absolute right-2 top-2 text-gray-500 hover:text-indigo-700"
                     onClick={() => setShowConfirmPassword(!showConfirmPassword)}
                   >
-                    {showConfirmPassword ? <BiSolidHide size={16} /> : <BiSolidShow size={16} />}
+                    {/* {showConfirmPassword ? <BiSolidHide size={16} /> : <BiSolidShow size={16} />} */}
                   </button>
                 </div>
               </div>

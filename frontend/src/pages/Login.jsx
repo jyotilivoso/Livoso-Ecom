@@ -35,6 +35,7 @@ const Login = () => {
       if (dataApi.success) {
         toast.success(dataApi.message);
         localStorage.setItem('token', dataApi.data);
+        // Cookies.set('token', dataApi.data, { expires: 7 }); 
         navigate('/');
       } else {
         toast.error(dataApi.message);
