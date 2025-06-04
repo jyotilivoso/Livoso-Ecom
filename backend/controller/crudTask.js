@@ -3,14 +3,13 @@ const Taskmodel = require('../models/taskModel');
 
 exports.createTask = async (req, res) => {
   try {
-    const { title, description, status, email ,createdBy} = req.body;
+    const { title, description, status,createdBy} = req.body;
 
-    if (!title || !description || !status || !email || !createdBy) {
+    if (!title || !description || !status ||  !createdBy) {
       throw new Error("Missing required fields");
     }
-
-    // 🛡️ Role check
-    const user = await checkUserRole(email, ["ADMIN"]);
+// 🛡️ Role check
+    const user = await checkUserRole(createdBy, ["ADMIN"]);
 
     const taskData = new Taskmodel({ title, description, status,createdBy });
     const saveData = await taskData.save();

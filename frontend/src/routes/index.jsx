@@ -7,6 +7,7 @@ import Service from "../pages/Service";
 import Hero from "../pages/Hero";
 import StatsCard from "../pages/StatsCard";
 import Amitav from "../pages/Amitav";
+import TaskCreate from "../pages/TaskCreate";
 
 
 
@@ -32,6 +33,11 @@ const router = createBrowserRouter([
                 path: "Amu",
                 element: <Amitav />
             },
+            {
+                path: "create-task",
+                element: <TaskCreate />
+            },
+           
             // {
             //     path: "service",
             //     element: <Service/>

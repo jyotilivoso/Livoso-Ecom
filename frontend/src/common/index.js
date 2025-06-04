@@ -2,6 +2,8 @@
 
 
 
+
+
 const backendDomain="http://localhost:8080"
 const SummerApi={
     signup:{
@@ -12,6 +14,16 @@ const SummerApi={
         url:`${backendDomain}/api/signin`,
         method:'post'
     },
+    createTask:{
+        url:`${backendDomain}/api/create-task`,
+        method:"post"
+    },
+    getAllTask:{
+        url:`${backendDomain}/api/get-all-task`,
+        method:"get"
+    },
+
+
     current_user:{
         url:`${backendDomain}/api/user-details`,
         method:"get"

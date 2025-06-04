@@ -1,8 +1,8 @@
 const UserModel = require('../models/UserModel');
 
-const checkUserRole = async (email, allowedRoles = []) => {
-  const user = await UserModel.findOne({ email });
-  console.log("Checking user role for email:", email);
+const checkUserRole = async (_id, allowedRoles = []) => {
+  const user = await UserModel.findOne({ _id: _id }).select('_id role');
+  console.log("Checking user role for email:", _id);
   console.log("User found:", user);
   
   if (!user) throw new Error("User not found");
