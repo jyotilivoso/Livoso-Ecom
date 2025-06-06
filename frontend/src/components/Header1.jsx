@@ -6,7 +6,10 @@ import { getUserData, isAuthenticated, logout } from '../service/data';
 
 
 function Header1() {
-  console.log(getUserData()._id)
+  if (isAuthenticated()){
+     console.log("getUserData",getUserData()._id)
+  }
+ 
   return (
     <div>
       <nav className="bg-white shadow-sm   ">

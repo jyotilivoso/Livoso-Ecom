@@ -8,6 +8,7 @@ import Hero from "../pages/Hero";
 import StatsCard from "../pages/StatsCard";
 import Amitav from "../pages/Amitav";
 import TaskCreate from "../pages/TaskCreate";
+import Alltask from "../pages/Alltask";
 
 
 
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
             {
                 path: "create-task",
                 element: <TaskCreate />
+            },
+            {
+                path: "all-task",
+                element: <Alltask />
             },
            
             // {
